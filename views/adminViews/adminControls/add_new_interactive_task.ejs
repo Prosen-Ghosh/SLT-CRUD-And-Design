@@ -1,0 +1,44 @@
+<div> <!--Model Div Start-->
+  <!-- Add New Country -->
+  <button class="btn btn-info active" id='countryModelBtn'>Add New Interactive Task</button>
+
+  <div id='myModel'class="modal fade">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Add New Interactive Task</h4>
+        </div>
+        <div class="modal-body">
+          <form action='' method="POST">
+            <div class="form-group">
+                <label for="word">Interactive Task Title:</label>
+                <input type="text" class="form-control" id="word" name='word' placeholder="Ex: Cow">
+            </div>
+            <div class="form-group">
+                <label for="Paragraph">Interactive Task Path:</label>
+                <select class="selectpicker form-control" data-live-search="true">
+                  <option data-tokens="ketchup mustard">Hot Dog, Fries and a Soda</option>
+                  <option data-tokens="mustard">Burger, Shake and a Smile</option>
+                  <option data-tokens="frosting">Sugar, Spice and all things nice</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Description">Description:</label>
+                <input type="text" class="form-control" id="description" name='description' placeholder="Ex: Description">
+            </div>
+            <div class="form-group">
+                <label for="Description">Minimum Score:</label>
+                <input type="text" class="form-control" id="description" name='description' placeholder="Ex: Description">
+            </div>
+            <button type="submit" class="btn btn-success ">Submit</button>
+            <button type="button" class="btn btn-warning ">Reset</button>
+          </form>
+        </div>
+      <div class="modal-footer">
+          ...
+      </div>
+      </div>
+    </div>
+  </div>
+</div> <!--Model Div End-->

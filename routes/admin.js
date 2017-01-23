@@ -39,4 +39,28 @@ router.get('/dataEntry/paragraph',function(req,res){
 router.get('/makeQuestion/speech',function(req,res){
   res.render(path.normalize(basePath + "/views/adminViews/admin_panel_view"),{title:"Admin Home", includeFile:'pages/speech_question_view',pageName:'Speech Question'});
 })
+
+router.get('/makeQuestion/mcq',function(req,res){
+  res.render(path.normalize(basePath + "/views/adminViews/admin_panel_view"),{title:"Admin Home", includeFile:'pages/mcq_question_view',pageName:'MCQ Question'});
+})
+
+router.get('/makeQuestion/yes_no',function(req,res){
+  res.render(path.normalize(basePath + "/views/adminViews/admin_panel_view"),{title:"Admin Home", includeFile:'pages/yes_no_question_view',pageName:'Yes/No Question'});
+})
+
+router.get('/makeQuestion/written',function(req,res){
+  res.render(path.normalize(basePath + "/views/adminViews/admin_panel_view"),{title:"Admin Home", includeFile:'pages/written_question_view',pageName:'Written Question'});
+})
+
+router.get('/dataEntry/interactive_task',function(req,res){
+  res.render(path.normalize(basePath + "/views/adminViews/admin_panel_view"),{title:"Admin Home", includeFile:'pages/interactive_task_view',pageName:'Interactive Task'});
+})
+
+router.get('/set_new_question',function(req,res){
+  res.render(path.normalize(basePath + "/views/adminViews/admin_panel_view"),{title:"Admin Home", includeFile:'pages/set_question_view',pageName:'Questions'});
+})
+
+router.get('/suggestions',function(req,res){
+  res.render(path.normalize(basePath + "/views/adminViews/admin_panel_view"),{title:"Admin Home", includeFile:'pages/suggestions_view',pageName:'Suggestions'});
+})
 module.exports = router;
