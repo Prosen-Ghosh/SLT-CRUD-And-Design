@@ -27,4 +27,16 @@ router.get('/dataEntry/word',function(req,res){
 router.get('/dataEntry/image',function(req,res){
   res.render(path.normalize(basePath + "/views/adminViews/admin_panel_view"),{title:"Admin Home", includeFile:'pages/image_view',pageName:'Image'});
 })
+
+router.get('/dataEntry/speech',function(req,res){
+  res.render(path.normalize(basePath + "/views/adminViews/admin_panel_view"),{title:"Admin Home", includeFile:'pages/speech_view',pageName:'Speech'});
+})
+
+router.get('/dataEntry/paragraph',function(req,res){
+  res.render(path.normalize(basePath + "/views/adminViews/admin_panel_view"),{title:"Admin Home", includeFile:'pages/paragraph_view',pageName:'Paragraph'});
+})
+
+router.get('/makeQuestion/speech',function(req,res){
+  res.render(path.normalize(basePath + "/views/adminViews/admin_panel_view"),{title:"Admin Home", includeFile:'pages/speech_question_view',pageName:'Speech Question'});
+})
 module.exports = router;
