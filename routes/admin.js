@@ -14,6 +14,7 @@ router.get('/profile', function (req, res) {
 })
 
 router.get('/dataEntry/country',adminControllers.countryController.index);
+router.post('/dataEntry/country',adminControllers.countryController.insert);
 
 router.get('/dataEntry/city',adminControllers.cityController.index);
 

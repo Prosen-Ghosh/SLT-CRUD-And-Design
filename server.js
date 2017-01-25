@@ -2,7 +2,9 @@ const express = require('express');
 const app = express();
 const admin = require('./routes/admin')
 const path = require("path");
+const bodyParser = require('body-parser');
 
+app.use(bodyParser());
 app.set('view engine', 'ejs'); // For template engine
 app.use('/assets',express.static(__dirname + '/public'));
 app.set('/views',path.normalize(__dirname + ' /views'));

@@ -1,15 +1,23 @@
 const mysql = require('mysql');
-const config = require('./config');
+const db = require('./db');
 
-console.log(config);
-var connection = mysql.createConnection(config);
-connection.connect();
+module.exports.getCountry = function(queryParams, callback) {
+  db.query('SELECT * FROM country ORDER BY country_name ASC', function (error, results, fields) {
+    if(error){
+      console.info(error);
+      return;
+    }
+    callback(false, results);
+  });
+};
 
-
-connection.query('SELECT * FROM country', function (error, results, fields) {
-  //if (error) throw error;
-  var databaseResult = null;
-  //console.log('The solution is: ', results[0]);
-  module.exports.databaseResult = results;
-});
-connection.end();
+module.exports.createCountry = function(data, callback) {
+  db.query('INSERT INTO country SET ?',data, function (error, results, fields) {
+    // INSERT INTO country SET `country_id` = 1, `country_name` = 'Bangladesh'
+    if(error){
+      console.info(error);
+      return;
+    }
+    callback(false, results);
+  });
+};
