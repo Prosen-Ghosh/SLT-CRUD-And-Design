@@ -1,30 +1,31 @@
-<div id='editcity-<%- city_id %>'class="modal fade"> <!--City Model Start-->
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title">Edit City</h4>
-      </div>
-      <div class="modal-body">
-        <form action='' method="POST" id="form-<%- city_id %>" enctype="application/x-www-form-urlencoded">
-          <inpit type='hidden' name='_method' value='put'>
-          <div class="form-group">
-            <div class="row-fluid">
-              <label for="countryName">Country Name:</label>
-              <input type="text" class="form-control" id="country_name" value="<%- country_name %>" disabled>
+        <div id='edit-<%- city_id %>'class="modal fade"> <!--City Model Start-->
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title" id="editTitle-<%- city_id %>">Edit City</h4>
+              </div>
+              <div class="modal-body">
+                <form method="POST" name="form1-<%- city_id %>" id="form1-<%- city_id %>" enctype="application/x-www-form-urlencoded">
+                  <input type="hidden" name="_method" value="PUT"/>
+                  <div class="form-group">
+                    <div class="row-fluid">
+                      <label for="countryName">Country Name:</label>
+                      <input type="text" class="form-control" id="country_name" value="<%- country_name %>" disabled />
+                      <input type="hidden" name='country_id' value="<%- country_id %>"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="city">City Name:</label>
+                      <input type="text" class="form-control" id="city_name" name='city_name' placeholder="Ex: Dhaka" value="<%- city_name%>"/>
+                      <input type="hidden" name='city_id' value="<%- city_id%>" />
+                  </div>
+                </form>
+              </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="submit" form="form1-<%- city_id %>" class="btn btn-success ">Update</button>
+            </div>
             </div>
           </div>
-          <div class="form-group">
-              <label for="city">City Name:</label>
-              <input type="hidden" class="form-control" id="city_id" name='city_id' value="<%- city_id%>">
-              <input type="text" class="form-control" id="city_name" name='city_name' placeholder="Ex: Dhaka" value="<%- city_name%>">
-          </div>
-        </form>
-      </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      <button type="submit" form="form1-<%- city_id %>" class="btn btn-success ">Update</button>
-    </div>
-    </div>
-  </div>
-</div> <!--City Model End-->
+        </div> <!--City Model End-->

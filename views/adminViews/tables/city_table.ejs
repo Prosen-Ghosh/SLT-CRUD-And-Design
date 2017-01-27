@@ -3,7 +3,6 @@
     <table class="table table-striped table-borderd table-hover" id='cityTable'>
       <thead>
           <tr>
-            <th>Serial No</th>
             <th>City Id</th>
             <th>Country Name</th>
             <th>City Name</th>
@@ -12,20 +11,20 @@
       </thead>
         <%for(var i = 0; i < databaseData.length ; i++){%>
               <tr>
-                  <td><%- i+1 %></td>
                   <td><%- databaseData[i].city_id %></td>
                   <td><%- databaseData[i].city_name %></td>
                   <td><%- databaseData[i].country_name %></td>
                   <td>
-                    <button class="btn btn-info btn-xs glyphicon glyphicon-edit" id='editBtn<%- databaseData[i].country_id %>' onclick="openEditModel(<%- databaseData[i].country_id %>);">Edit</button>
+                    <button class="btn btn-info btn-xs glyphicon glyphicon-edit" id='editBtn<%- databaseData[i].city_id %>' onclick="openEditModel(<%- databaseData[i].city_id %>);">Edit</button>
 
                       <%- include('./../adminControls/editControls/edit_city',{
                          city_id : databaseData[i].city_id,
                          city_name : databaseData[i].city_name,
-                         country_name : databaseData[i].country_name
+                         country_name : databaseData[i].country_name,
+                         country_id : databaseData[i].country_id
                        })%>
 
-                  <button class="btn btn-danger btn-xs glyphicon glyphicon-remove" id='deleteBtn<%- databaseData[i].country_id %>' onclick="openDeleteModel(<%- databaseData[i].country_id %>);">Delete</button>
+                  <button class="btn btn-danger btn-xs glyphicon glyphicon-remove" id='deleteBtn<%- databaseData[i].city_id %>' onclick="openDeleteModel(<%- databaseData[i].city_id %>);">Delete</button>
 
                       <%- include('./../adminControls/deleteControls/delete_city',{
                         city_id : databaseData[i].city_id,

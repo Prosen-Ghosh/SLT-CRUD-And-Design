@@ -1,6 +1,6 @@
 <!--Delete City Model-->
 
-          <div id='deletecity-<%- city_id %>' class="modal fade bs-example-modal-sm"> <!--Model Start-->
+          <div id='delete-<%- city_id %>' class="modal fade bs-example-modal-sm"> <!--Model Start-->
             <div class="modal-dialog modal-sm">
               <div class="modal-content">
                 <div class="modal-header">
@@ -8,10 +8,10 @@
                     <h4 class="modal-title text-warning" id="deleteTitle-<%- city_id %>">Delete City</h4>
                 </div>
                 <div class="modal-body">
-                  <form method="POST" name="delete-<%- city_id %>" id="delete-<%- city_id %>" enctype="application/x-www-form-urlencoded">
-                    <input type="hidden" name="_method" value="delete"/>
+                  <form method="POST" name="dform1-<%- city_id %>" id="dform1-<%- city_id %>" enctype="application/x-www-form-urlencoded">
+                    <input type="hidden" name="_method" value="DELETE"/>
                     <div class="form-group">
-                      <input type="hidden" class="form-control" id="city_id" name='city_id' value='<%- city_id %>' />
+                      <input type="hidden" id="city_id" name='city_id' value='<%- city_id %>' />
                     </div>
                     <div class="form-group">
                         <div class="alert alert-danger" role="alert">Are You Sure? <br/><span>It Will Delete Forever</span></div>
@@ -20,7 +20,7 @@
                 </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="submit" form="delete-<%- city_id %>" class="btn btn-danger ">Delete</button>
+                <button type="submit" form="dform1-<%- city_id %>" class="btn btn-danger ">Delete</button>
               </div>
               </div>
             </div>

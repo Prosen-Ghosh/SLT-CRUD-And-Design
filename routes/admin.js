@@ -21,6 +21,8 @@ router.delete('/dataEntry/country',adminControllers.countryController.remove);
 
 router.get('/dataEntry/city',adminControllers.cityController.index);
 router.post('/dataEntry/city',adminControllers.cityController.insert);
+router.put('/dataEntry/city',adminControllers.cityController.update);
+router.delete('/dataEntry/city',adminControllers.cityController.remove);
 
 router.get('/dataEntry/word',adminControllers.wordController.index)
 

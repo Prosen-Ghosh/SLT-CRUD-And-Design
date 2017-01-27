@@ -9,7 +9,7 @@ $(document).ready(function(){
   });
 });
 
-// This Function is for City
+// This Function is for City Modal
 $(document).ready(function(){
   $('#cityModelBtn').click(function(){
     $('#myModel').modal('show');
@@ -25,18 +25,10 @@ $(document).ready(function(){
   $('#cityTable').dataTable();
 });
 
-function openEditModel(str){
-  $('#editcountry-'+str).modal('show');
-}
-
 function openDeleteModel(str){
-  $('#deletecountry-'+str).modal('show');
+  $('#delete-'+str).modal('show');
 }
 
 function openEditModel(str){
-  $('#editcity-'+str).modal('show');
-}
-
-function openDeleteModel(str){
-  $('#deletecity-'+str).modal('show');
+  $('#edit-'+str).modal('show');
 }
