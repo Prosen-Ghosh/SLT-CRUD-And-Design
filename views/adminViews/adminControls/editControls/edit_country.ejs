@@ -1,0 +1,31 @@
+<!--Edit Country Model-->
+
+          <div id='editcountry-<%- country_id %>' class="modal fade "> <!--Model Start-->
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="editTitle-<%- country_id %>">Edit New Country</h4>
+                </div>
+                <div class="modal-body">
+                  <form method="POST" name="form1-<%- country_id %>" id="form1-<%- country_id %>" enctype="application/x-www-form-urlencoded">
+                    <input type="hidden" name="_method" value="PUT"/>
+                    <div class="form-group">
+                        <label for="country_id">Country Id:</label>
+                        <input type="text" class="form-control" id="country_id" name='country_id' value='<%- country_id %>' disabled />
+                        <input type="hidden" name='country_id' value='<%- country_id %>'>
+                    </div>
+                    <div class="form-group">
+                        <label for="country_name">Country Name:</label>
+                        <input type="text" class="form-control" id="country_name" name='country_name' value='<%- country_name %>' placeholder="Ex: Bangladesh" autofocus />
+                    </div>
+
+                  </form>
+                </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" form="form1-<%- country_id %>" class="btn btn-success ">Update</button>
+              </div>
+              </div>
+            </div>
+          </div><!--Model End-->

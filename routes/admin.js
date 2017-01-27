@@ -14,9 +14,13 @@ router.get('/profile', function (req, res) {
 })
 
 router.get('/dataEntry/country',adminControllers.countryController.index);
+router.get('/dataEntry/country/api',adminControllers.countryController.api);
 router.post('/dataEntry/country',adminControllers.countryController.insert);
+router.put('/dataEntry/country',adminControllers.countryController.update);
+router.delete('/dataEntry/country',adminControllers.countryController.remove);
 
 router.get('/dataEntry/city',adminControllers.cityController.index);
+router.post('/dataEntry/city',adminControllers.cityController.insert);
 
 router.get('/dataEntry/word',adminControllers.wordController.index)
 

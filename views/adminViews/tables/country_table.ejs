@@ -4,18 +4,32 @@
       <thead>
           <tr>
             <th>Serial No</th>
-            <th>ID</th>
-            <th>Name</th>
+            <th>Country Id</th>
+            <th>Country Name</th>
             <th class="text-center">Action</th>
           </tr>
       </thead>
             <% for(var i = 0; i < databaseData.length; i++){ %>
               <tr>
-                  <td><%- i+1 %></td>
-                  <td><%- databaseData[i].country_id %></td>
-                  <td><%- databaseData[i].country_name %></td>
-                  <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a>
-                  <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Delete</a></td>
+                <td><%- i+1 %></td>
+                <td><%- databaseData[i].country_id %></td>
+                <td><%- databaseData[i].country_name %></td>
+                <td class="text-center">
+                  <!-- <a class='btn btn-info btn-xs' id='countryModelBtn' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a>-->
+                  <button class="btn btn-info btn-xs glyphicon glyphicon-edit" id='editBtn<%- databaseData[i].country_id %>' onclick="openEditModel(<%- databaseData[i].country_id %>);">Edit</button>
+
+                  <%- include('./../adminControls/editControls/edit_country',{
+                     country_id : databaseData[i].country_id,
+                     country_name : databaseData[i].country_name
+                   })%>
+
+                  <button class="btn btn-danger btn-xs glyphicon glyphicon-remove" id='deleteBtn<%- databaseData[i].country_id %>' onclick="openDeleteModel(<%- databaseData[i].country_id %>);">Delete</button>
+
+                  <%- include('./../adminControls/deleteControls/delete_country',{
+                     country_id : databaseData[i].country_id,
+                     country_name : databaseData[i].country_name
+                   })%>
+                </td>
               </tr>
             <% } %>
       </table>

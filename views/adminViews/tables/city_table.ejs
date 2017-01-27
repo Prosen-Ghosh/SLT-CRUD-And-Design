@@ -1,28 +1,40 @@
 <div><!--Table Start-->
   <div class="row col-md-9 custyle">
-    <table class="table table-striped custab">
+    <table class="table table-striped table-borderd table-hover" id='cityTable'>
       <thead>
           <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th class="text-center">Action</th>
+            <th>Serial No</th>
+            <th>City Id</th>
+            <th>Country Name</th>
+            <th>City Name</th>
+            <th class="text-center">Action</th>
           </tr>
       </thead>
+        <%for(var i = 0; i < databaseData.length ; i++){%>
               <tr>
-                  <td>1</td>
-                  <td>News</td>
-                  <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Delete</a></td>
+                  <td><%- i+1 %></td>
+                  <td><%- databaseData[i].city_id %></td>
+                  <td><%- databaseData[i].city_name %></td>
+                  <td><%- databaseData[i].country_name %></td>
+                  <td>
+                    <button class="btn btn-info btn-xs glyphicon glyphicon-edit" id='editBtn<%- databaseData[i].country_id %>' onclick="openEditModel(<%- databaseData[i].country_id %>);">Edit</button>
+
+                      <%- include('./../adminControls/editControls/edit_city',{
+                         city_id : databaseData[i].city_id,
+                         city_name : databaseData[i].city_name,
+                         country_name : databaseData[i].country_name
+                       })%>
+
+                  <button class="btn btn-danger btn-xs glyphicon glyphicon-remove" id='deleteBtn<%- databaseData[i].country_id %>' onclick="openDeleteModel(<%- databaseData[i].country_id %>);">Delete</button>
+
+                      <%- include('./../adminControls/deleteControls/delete_city',{
+                        city_id : databaseData[i].city_id,
+                        city_name : databaseData[i].city_name,
+                        country_name : databaseData[i].country_name
+                       })%>
+                   </td>
               </tr>
-              <tr>
-                  <td>2</td>
-                  <td>Products</td>
-                  <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Delete</a></td>
-              </tr>
-              <tr>
-                  <td>3</td>
-                  <td>Blogs</td>
-                  <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Delete</a></td>
-              </tr>
+        <%}%>
       </table>
     </div>
 </div><!--Table Start-->

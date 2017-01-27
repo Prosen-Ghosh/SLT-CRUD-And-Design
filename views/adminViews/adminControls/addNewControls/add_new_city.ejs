@@ -1,7 +1,9 @@
 <div> <!--Model Div Start-->
   <!-- Add New Country -->
-  <button class="btn btn-info active" id='cityModelBtn'>Add New City</button>
-
+  <div>
+    <button class="btn btn-info active" id='cityModelBtn'>Add New City</button>
+  </div>
+  <br/>
   <div id='myModel'class="modal fade">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -10,27 +12,23 @@
             <h4 class="modal-title">Add New City</h4>
         </div>
         <div class="modal-body">
-          <form action='' method="POST">
+          <form action='' method="POST" id="form1">
             <div class="form-group">
               <div class="row-fluid">
                 <label for="countryName">Country Name:</label>
-                <select class="selectpicker form-control" data-live-search="true">
-                  <option data-tokens="ketchup mustard">Hot Dog, Fries and a Soda</option>
-                  <option data-tokens="mustard">Burger, Shake and a Smile</option>
-                  <option data-tokens="frosting">Sugar, Spice and all things nice</option>
+                <select name="country_id"class="selectpicker form-control" data-live-search="true" id="selectCountryName">
                 </select>
               </div>
             </div>
             <div class="form-group">
                 <label for="city">City Name:</label>
-                <input type="text" class="form-control" id="city" name='city' placeholder="Ex: Dhaka">
+                <input type="text" class="form-control" id="city_name" name='city_name' placeholder="Ex: Dhaka">
             </div>
-            <button type="submit" class="btn btn-success ">Submit</button>
-            <button type="button" class="btn btn-warning ">Reset</button>
           </form>
         </div>
       <div class="modal-footer">
-          ...
+        <button type="button" class="btn btn-warning ">Reset</button>
+        <button type="submit" form="form1" class="btn btn-success">Submit</button>
       </div>
       </div>
     </div>
