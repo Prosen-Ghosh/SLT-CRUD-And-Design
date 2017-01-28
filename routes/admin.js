@@ -24,13 +24,19 @@ router.post('/dataEntry/city',adminControllers.cityController.insert);
 router.put('/dataEntry/city',adminControllers.cityController.update);
 router.delete('/dataEntry/city',adminControllers.cityController.remove);
 
-router.get('/dataEntry/word',adminControllers.wordController.index)
+router.get('/dataEntry/word',adminControllers.wordController.index);
+router.post('/dataEntry/word',adminControllers.wordController.insert);
+router.put('/dataEntry/word',adminControllers.wordController.update);
+router.delete('/dataEntry/word',adminControllers.wordController.remove);
 
 router.get('/dataEntry/image',adminControllers.imageController.index);
 
 router.get('/dataEntry/speech',adminControllers.speechController.index)
 
-router.get('/dataEntry/paragraph',adminControllers.paragraphController.index)
+router.get('/dataEntry/paragraph',adminControllers.paragraphController.index);
+router.post('/dataEntry/paragraph',adminControllers.paragraphController.insert);
+router.put('/dataEntry/paragraph',adminControllers.paragraphController.update);
+router.delete('/dataEntry/paragraph',adminControllers.paragraphController.remove);
 
 router.get('/makeQuestion/speech',adminControllers.speechQuestionController.index);
 

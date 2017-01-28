@@ -1,7 +1,9 @@
 <div> <!--Model Div Start-->
   <!-- Add New Country -->
-  <button class="btn btn-info active" id='countryModelBtn'>Add New Paragraph</button>
-
+  <div>
+    <button class="btn btn-info active" id='countryModelBtn'>Add New Paragraph</button>
+  </div>
+  <br/>
   <div id='myModel'class="modal fade">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -10,25 +12,25 @@
             <h4 class="modal-title">Add New Paragraph</h4>
         </div>
         <div class="modal-body">
-          <form action='' method="POST">
+          <form action='' method="POST" id="form1">
             <div class="form-group">
                 <label for="word">Paragraph Title:</label>
-                <input type="text" class="form-control" id="word" name='word' placeholder="Ex: Cow">
+                <input type="text" class="form-control" id="paragraph_title" name='paragraph_title' placeholder="Ex: Cow">
             </div>
             <div class="form-group">
                 <label for="Paragraph">Paragraph:</label>
                 <textarea rows="6" cols="50" class="form-control" id="paragraph" name='paragraph' placeholder="Ex: The 'cow' is a very useful animal. It is a domestic animal. It is found all over the world.It gives us milk. Cow's milk is very useful for the children and patients. It is gentle by nature. The cow has a large body. It has four legs, two horns and a long tail. It has two ears. "></textarea>
             </div>
             <div class="form-group">
-                <label for="Description">Word:</label>
+                <label for="Description">Description:</label>
                 <input type="text" class="form-control" id="description" name='description' placeholder="Ex: Description">
             </div>
-            <button type="submit" class="btn btn-success ">Submit</button>
-            <button type="button" class="btn btn-warning ">Reset</button>
+
           </form>
         </div>
       <div class="modal-footer">
-          ...
+        <button type="button" class="btn btn-warning ">Reset</button>
+        <button type="submit" form="form1" class="btn btn-success ">Submit</button>
       </div>
       </div>
     </div>

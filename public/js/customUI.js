@@ -16,13 +16,9 @@ $(document).ready(function(){
   });
 });
 
-// Country Table Data Search,And divide
+// Table Data Search,And divide
 $(document).ready(function(){
-  $('#countryTable').dataTable();
-});
-// City Table Data Search,And divide
-$(document).ready(function(){
-  $('#cityTable').dataTable();
+  $('.tableSearch').dataTable();
 });
 
 function openDeleteModel(str){
