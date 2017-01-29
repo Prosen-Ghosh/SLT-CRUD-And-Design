@@ -1,34 +1,35 @@
-<div id='edit-<%- paragraph_id %>'class="modal fade">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title">Edit Paragraph</h4>
-      </div>
-      <div class="modal-body">
-        <form action='' method="POST" name="form1-<%- paragraph_id %>" id="form1-<%- paragraph_id %>" enctype="application/x-www-form-urlencoded">
-          <input type="hidden" name="_method" value="PUT"/>
-          <div class="form-group">
-              <label for="word">Paragraph Title:</label>
-              <input type="text" class="form-control" id="paragraph_title" name='paragraph_title' placeholder="Ex: Cow" value='<%- paragraph_title %>'>
-              <input type="hidden" id="paragraph_id" name='paragraph_id' value='<%- paragraph_id %>'>
-          </div>
-          <div class="form-group">
-              <label for="Paragraph">Paragraph:</label>
-              <textarea rows="6" cols="50" class="form-control" id="paragraph" name='paragraph' placeholder="Ex: The 'cow' is a very useful animal. It is a domestic animal. It is found all over the world.It gives us milk. Cow's milk is very useful for the children and patients. It is gentle by nature. The cow has a large body. It has four legs, two horns and a long tail. It has two ears."><%- paragraph %></textarea>
-          </div>
-          <div class="form-group">
-              <label for="Description">Description:</label>
-              <input type="text" class="form-control" id="description" name='description' placeholder="Ex: Description" value="<%- description %>">
-          </div>
+    <!--Edit Paragraph-->
+              <div id='edit-<%- paragraph_id %>' class="modal fade">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Edit Paragraph</h4>
+                    </div>
+                    <div class="modal-body">
+                      <form action='' method="POST" name="form1-<%- paragraph_id %>" id="form1-<%- paragraph_id %>" enctype="application/x-www-form-urlencoded">
+                          <input type="hidden" name="_method" value="PUT"/>
+                          <div class="form-group">
+                              <label for="word">Paragraph Title:</label>
+                              <input type="text" class="form-control" id="paragraph_title" name='paragraph_title' placeholder="Ex: Cow" value='<%- paragraph_title %>'>
+                              <input type="hidden" class="form-control" id="paragraph_id" name='paragraph_id' value='<%- paragraph_id %>'>
+                          </div>
+                          <div class="form-group">
+                              <label for="Paragraph">Paragraph:</label>
+                              <textarea rows="6" cols="50" class="form-control" id="paragraph" name='paragraph' placeholder="Ex: The 'cow' is a very useful animal. It is a domestic animal. It is found all over the world.It gives us milk. Cow's milk is very useful for the children and patients. It is gentle by nature. The cow has a large body. It has four legs, two horns and a long tail. It has two ears."><%- paragraph %></textarea>
+                          </div>
+                          <div class="form-group">
+                              <label for="Description">Description:</label>
+                              <input type="text" class="form-control" id="description" name='description' placeholder="Ex: Description" value="<%- description %>">
+                          </div>
 
-        </form>
-      </div>
-    <div class="modal-footer">
+                      </form>
+                    </div>
+                  <div class="modal-footer">
 
-      <button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
-      <button type="submit" form="form1-<%- paragraph_id %>" class="btn btn-success ">Submit</button>
-    </div>
-    </div>
-  </div>
-</div>
+                    <button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
+                    <button type="submit" form="form1-<%- paragraph_id %>" class="btn btn-success ">Submit</button>
+                  </div>
+                  </div>
+                </div>
+              </div>

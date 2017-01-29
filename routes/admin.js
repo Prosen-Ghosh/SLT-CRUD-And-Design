@@ -13,27 +13,37 @@ router.get('/profile', function (req, res) {
   res.send(path.normalize(basePath + ' Admin Profile'));
 })
 
+// Country Route
 router.get('/dataEntry/country',adminControllers.countryController.index);
 router.get('/dataEntry/country/api',adminControllers.countryController.api);
 router.post('/dataEntry/country',adminControllers.countryController.insert);
 router.put('/dataEntry/country',adminControllers.countryController.update);
 router.delete('/dataEntry/country',adminControllers.countryController.remove);
 
+// City Route
 router.get('/dataEntry/city',adminControllers.cityController.index);
 router.post('/dataEntry/city',adminControllers.cityController.insert);
 router.put('/dataEntry/city',adminControllers.cityController.update);
 router.delete('/dataEntry/city',adminControllers.cityController.remove);
 
+// Word Route
 router.get('/dataEntry/word',adminControllers.wordController.index);
+router.get('/dataEntry/word/api',adminControllers.wordController.api)
 router.post('/dataEntry/word',adminControllers.wordController.insert);
 router.put('/dataEntry/word',adminControllers.wordController.update);
 router.delete('/dataEntry/word',adminControllers.wordController.remove);
 
 router.get('/dataEntry/image',adminControllers.imageController.index);
+//router.get('/dataEntry/image/api',adminControllers.imageController.api);
 
-router.get('/dataEntry/speech',adminControllers.speechController.index)
+router.get('/dataEntry/speech',adminControllers.speechController.index);
+router.post('/dataEntry/speech',adminControllers.speechController.insert);
+router.put('/dataEntry/speech',adminControllers.speechController.update);
+router.delete('/dataEntry/speech',adminControllers.speechController.remove);
 
+// Paragraph Route
 router.get('/dataEntry/paragraph',adminControllers.paragraphController.index);
+//router.get('/dataEntry/paragraph/api',adminControllers.paragraphController.api);
 router.post('/dataEntry/paragraph',adminControllers.paragraphController.insert);
 router.put('/dataEntry/paragraph',adminControllers.paragraphController.update);
 router.delete('/dataEntry/paragraph',adminControllers.paragraphController.remove);

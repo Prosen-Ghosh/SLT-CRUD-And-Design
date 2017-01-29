@@ -17,6 +17,12 @@ module.exports = {
       res.render(path.normalize(basePath + "/views/adminViews/admin_panel_view"),data);
     });
   },
+  api : function(req,res,next){
+    wordData.getWord('',function(err,record){
+      res.status(200);
+      res.send(record);
+    });
+  },
   insert : function(req,res,next){
     let wordInfo = {
       word_id : null,
@@ -35,7 +41,6 @@ module.exports = {
       description : req.body.description,
       synonyms : req.body.synonyms
     }
-
     wordData.updateWord(wordInfo, function(err,record){
       res.redirect('/admin/dataEntry/word');
     });

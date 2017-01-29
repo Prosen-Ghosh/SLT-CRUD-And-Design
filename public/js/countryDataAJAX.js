@@ -13,3 +13,8 @@ $(document).ready(function(){
       });
     });
 });
+
+/*function changeType(val){
+  alert('hi');
+}
+*/

@@ -32,6 +32,7 @@ module.exports = {
       callback(false, results);
     });
   },
+  
   deleteParagraph : function(data, callback) {
     db.query('DELETE FROM paragraph WHERE paragraph_id = ?',[data.paragraph_id], function (error, results, fields) {
       if(error){

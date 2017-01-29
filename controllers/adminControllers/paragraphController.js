@@ -4,6 +4,7 @@ const path = require("path");
 const paragraphData = require('./../../models/paragraphModel');
 
 module.exports = {
+
   index : function(req,res,next){
     paragraphData.getParagraph('',function(err,record){
       let data = {
@@ -15,6 +16,7 @@ module.exports = {
       res.render(path.normalize(basePath + "/views/adminViews/admin_panel_view"),data);
     });
   },
+
   insert : function(req,res,next){
     let paragraphInfo = {
       paragraph_id : null,
@@ -26,6 +28,7 @@ module.exports = {
       res.redirect('/admin/dataEntry/paragraph');
     })
   },
+
   update : function(req,res,next){
     let paragraphInfo = {
       paragraph_id : req.body.paragraph_id,
@@ -33,7 +36,6 @@ module.exports = {
       paragraph : req.body.paragraph,
       description : req.body.description
     }
-
     paragraphData.updateParagraph(paragraphInfo, function(err,record){
       res.redirect('/admin/dataEntry/paragraph');
     });

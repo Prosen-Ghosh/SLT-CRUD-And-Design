@@ -1,0 +1,39 @@
+              <div id='edit-<%- speech_id %>'class="modal fade">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Edit Speech</h4>
+                    </div>
+                    <div class="modal-body">
+                      <form method="POST" name="form1-<%- speech_id %>" id="form1-<%- speech_id %>" enctype="application/x-www-form-urlencoded">
+                        <input type="hidden" name="_method" value="PUT"/>
+                        <div class="form-group">
+                            <label for="Description">Speech Type:</label>
+                            <select class="selectpicker form-control" data-live-search="true" name='speech_type' id="speech_type" onchange="changeType(this);">
+                              <option value="null">Select An Option</option>
+                              <option data-tokens="Word" value="Word">Word</option>
+                              <option data-tokens="Image" value="Image">Image</option>
+                              <option data-tokens="Paragraph" value="Paragraph">Paragraph</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="contentId">Content Id:</label>
+                            <select class="selectpicker form-control content_id" data-live-search="true" name="content_id" id="content_id">
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="hint">Hint:</label>
+                            <input type="text" class="form-control" id="hint" name='hint' placeholder="Ex: Hint" value="<%- hint %>">
+                            <input type="hidden" class="form-control" id="speech_id" name='speech_id' value="<%- speech_id %>">
+                        </div>
+
+                      </form>
+                    </div>
+                  <div class="modal-footer">
+                    <button type="button" data-dismiss="modal" class="btn btn-default ">Close</button>
+                    <button type="submit" form='form1-<%- speech_id %>' class="btn btn-success ">Submit</button>
+                  </div>
+                  </div>
+                </div>
+              </div>
