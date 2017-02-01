@@ -3,26 +3,34 @@
     <table class="table table-striped custab tableSearch">
       <thead>
           <tr>
-              <th>ID</th>
               <th>Name</th>
+              <th>Image</th>
+              <th>Description</th>
               <th class="text-center">Action</th>
           </tr>
       </thead>
+        <% for(var i = 0; i < databaseData.length; i++) {%>
               <tr>
-                  <td>1</td>
-                  <td>News</td>
-                  <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Delete</a></td>
-              </tr>
-              <tr>
-                  <td>2</td>
-                  <td>Products</td>
-                  <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Delete</a></td>
-              </tr>
-              <tr>
-                  <td>3</td>
-                  <td>Blogs</td>
-                  <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Delete</a></td>
-              </tr>
+                  <td><%- databaseData[i].image_name %></td>
+                  <td><img src="/images/<%- databaseData[i].image_path %>" height="120px" width="120px" class="img-responsive img-circle"></td>
+                  <td><%- databaseData[i].description %></td>
+                  <td>
+                    <button class="btn btn-info btn-xs glyphicon glyphicon-edit" id='editBtn<%- databaseData[i].image_id %>' onclick="openEditModel(<%- databaseData[i].image_id %>);">Edit</button>
+
+                      <%- include('./../adminControls/editControls/edit_image',{
+                         image_id : databaseData[i].image_id,
+                         image_name : databaseData[i].image_name,
+                         image_path : databaseData[i].image_path,
+                         description : databaseData[i].description
+                       })%>
+
+                  <button class="btn btn-danger btn-xs glyphicon glyphicon-remove" id='deleteBtn<%- databaseData[i].image_id %>' onclick="openDeleteModel(<%- databaseData[i].image_id %>);">Delete</button>
+
+                      <%- include('./../adminControls/deleteControls/delete_image',{
+                        image_id : databaseData[i].image_id
+                       })%>
+                   </td>
+        <% } %>
       </table>
     </div>
 </div><!--Table Start-->

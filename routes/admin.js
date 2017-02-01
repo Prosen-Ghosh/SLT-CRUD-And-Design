@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const basePath = process.env.PWD || process.cwd();
 const path = require("path");
+var multer  = require('multer'); // This module is for image upload
+var upload = multer({ dest: './../public/img/userImages/'}); //uploded image path
 
 const adminControllers = require('.././controllers/adminControllers'); // Loding All Admin Controllers
 // define the home page route for admin
@@ -34,7 +36,10 @@ router.put('/dataEntry/word',adminControllers.wordController.update);
 router.delete('/dataEntry/word',adminControllers.wordController.remove);
 
 router.get('/dataEntry/image',adminControllers.imageController.index);
-//router.get('/dataEntry/image/api',adminControllers.imageController.api);
+router.get('/dataEntry/image/api',adminControllers.imageController.api);
+router.post('/dataEntry/image',upload.single('file'),adminControllers.imageController.insert);
+router.put('/dataEntry/image',upload.single('file'),adminControllers.imageController.update);
+router.delete('/dataEntry/image',adminControllers.imageController.remove);
 
 router.get('/dataEntry/speech',adminControllers.speechController.index);
 router.post('/dataEntry/speech',adminControllers.speechController.insert);

@@ -10,7 +10,7 @@ function changeType(val){
     wordFlag = true;
   }
   else if(val.value.toString() === 'Image'){
-    //url = 'http://localhost:3000/admin/dataEntry/image/api';
+    url = 'http://localhost:3000/admin/dataEntry/image/api';
     imageFlag = true;
   }
   else if(val.value.toString() === 'Paragraph'){
