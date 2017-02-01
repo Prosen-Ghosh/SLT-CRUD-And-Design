@@ -1,28 +1,37 @@
 <div><!--Table Start-->
   <div class="row col-md-9 custyle">
-    <table class="table table-striped custab">
+    <table class="table table-striped custab tableSearch">
       <thead>
           <tr>
-              <th>ID</th>
-              <th>Name</th>
+              <th>Question Title</th>
+              <th>Question</th>
+              <th>Answer</th>
               <th class="text-center">Action</th>
           </tr>
       </thead>
+        <% for(var i = 0; i < databaseData.length; i++){ %>
               <tr>
-                  <td>1</td>
-                  <td>News</td>
-                  <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Delete</a></td>
+                  <td><%- databaseData[i].question_title %></td>
+                  <td><%- databaseData[i].question %></td>
+                  <td><%- databaseData[i].answer %></td>
+                  <td>
+                    <button class="btn btn-info btn-xs glyphicon glyphicon-edit" id='editBtn<%- databaseData[i].question_id %>' onclick="openEditModel(<%- databaseData[i].question_id %>);">Edit</button>
+
+                      <%- include('./../adminControls/editControls/edit_yes_no_question',{
+                         question_id : databaseData[i].question_id,
+                         question_title : databaseData[i].question_title,
+                         question : databaseData[i].question,
+                         answer : databaseData[i].answer
+                       })%>
+
+                  <button class="btn btn-danger btn-xs glyphicon glyphicon-remove" id='deleteBtn<%- databaseData[i].question_id %>' onclick="openDeleteModel(<%- databaseData[i].question_id %>);">Delete</button>
+
+                      <%- include('./../adminControls/deleteControls/delete_yes_no_question',{
+                        question_id : databaseData[i].question_id
+                       })%>
+                   </td>
               </tr>
-              <tr>
-                  <td>2</td>
-                  <td>Products</td>
-                  <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Delete</a></td>
-              </tr>
-              <tr>
-                  <td>3</td>
-                  <td>Blogs</td>
-                  <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Delete</a></td>
-              </tr>
+        <% } %>
       </table>
     </div>
 </div><!--Table Start-->

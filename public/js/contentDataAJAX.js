@@ -14,7 +14,7 @@ function changeType(val){
     imageFlag = true;
   }
   else if(val.value.toString() === 'Paragraph'){
-    //url = 'http://localhost:3000/admin/dataEntry/paragraph/api';
+    url = 'http://localhost:3000/admin/dataEntry/paragraph/api';
     paragraphFlag = true;
   }
   else return;

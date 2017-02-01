@@ -16,7 +16,12 @@ module.exports = {
       res.render(path.normalize(basePath + "/views/adminViews/admin_panel_view"),data);
     })
   },
-
+  api : function(req,res,next){
+    speechData.getSpeech('',function(err,record){
+      res.status(200);
+      res.send(record);
+    });
+  },
   insert : function(req,res,next){
     let speechInfo = {
       speech_id : null,

@@ -35,20 +35,23 @@ router.post('/dataEntry/word',adminControllers.wordController.insert);
 router.put('/dataEntry/word',adminControllers.wordController.update);
 router.delete('/dataEntry/word',adminControllers.wordController.remove);
 
+// Image Route
 router.get('/dataEntry/image',adminControllers.imageController.index);
 router.get('/dataEntry/image/api',adminControllers.imageController.api);
 router.post('/dataEntry/image',upload.single('file'),adminControllers.imageController.insert);
 router.put('/dataEntry/image',upload.single('file'),adminControllers.imageController.update);
 router.delete('/dataEntry/image',adminControllers.imageController.remove);
 
+// Speech Route
 router.get('/dataEntry/speech',adminControllers.speechController.index);
+//router.get('/dataEntry/speech',adminControllers.speechController.api);
 router.post('/dataEntry/speech',adminControllers.speechController.insert);
 router.put('/dataEntry/speech',adminControllers.speechController.update);
 router.delete('/dataEntry/speech',adminControllers.speechController.remove);
 
 // Paragraph Route
 router.get('/dataEntry/paragraph',adminControllers.paragraphController.index);
-//router.get('/dataEntry/paragraph/api',adminControllers.paragraphController.api);
+router.get('/dataEntry/paragraph/api',adminControllers.paragraphController.api);
 router.post('/dataEntry/paragraph',adminControllers.paragraphController.insert);
 router.put('/dataEntry/paragraph',adminControllers.paragraphController.update);
 router.delete('/dataEntry/paragraph',adminControllers.paragraphController.remove);
@@ -57,7 +60,11 @@ router.get('/makeQuestion/speech',adminControllers.speechQuestionController.inde
 
 router.get('/makeQuestion/mcq',adminControllers.mcqQuestionController.index)
 
-router.get('/makeQuestion/yes_no',adminControllers.yesNoQuestionController.index)
+// Yes/No Quesions route
+router.get('/makeQuestion/yes_no',adminControllers.yesNoQuestionController.index);
+router.post('/makeQuestion/yes_no',adminControllers.yesNoQuestionController.insert);
+router.put('/makeQuestion/yes_no',adminControllers.yesNoQuestionController.update);
+router.delete('/makeQuestion/yes_no',adminControllers.yesNoQuestionController.remove)
 
 router.get('/makeQuestion/written',adminControllers.writtenQuestionController.index)
 

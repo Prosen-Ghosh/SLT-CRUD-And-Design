@@ -16,7 +16,12 @@ module.exports = {
       res.render(path.normalize(basePath + "/views/adminViews/admin_panel_view"),data);
     });
   },
-
+  api : function(req,res,next){
+      paragraphData.getParagraph('',function(err,record){
+      res.status(200);
+      res.send(record);
+    });
+  },
   insert : function(req,res,next){
     let paragraphInfo = {
       paragraph_id : null,
