@@ -34,7 +34,7 @@ module.exports = {
   },
 
   updateImage : function(data, callback) {
-    db.query('UPDATE image SET image_name = ?, image_path = ?, description = ? WHERE image_id = ?',[data.image_name,data.image_path,data.description,data.image_id], function (error, results, fields) {
+    db.query('UPDATE image SET type = ?, image_name = ?, image_path = ?, description = ? WHERE image_id = ?',[data.type,data.image_name,data.image_path,data.description,data.image_id], function (error, results, fields) {
       if(error){
         console.info(error);
         return;

@@ -3,7 +3,8 @@ const router = express.Router();
 const basePath = process.env.PWD || process.cwd();
 const path = require("path");
 var multer  = require('multer'); // This module is for image upload
-var upload = multer({ dest: './../public/img/userImages/'}); //uploded image path
+var upload = multer({ dest: './../public/img/userImages/'});
+var fileUpload = multer({ dest: './../public/interactive_task/'}); //uploded image path
 
 const adminControllers = require('.././controllers/adminControllers'); // Loding All Admin Controllers
 // define the home page route for admin
@@ -63,8 +64,6 @@ router.post('/makeQuestion/speech',adminControllers.speechQuestionController.ins
 router.put('/makeQuestion/speech',adminControllers.speechQuestionController.update);
 router.delete('/makeQuestion/speech',adminControllers.speechQuestionController.remove);
 
-router.get('/makeQuestion/mcq',adminControllers.mcqQuestionController.index)
-
 // Yes/No Quesions route
 router.get('/makeQuestion/yes_no',adminControllers.yesNoQuestionController.index);
 router.post('/makeQuestion/yes_no',adminControllers.yesNoQuestionController.insert);
@@ -77,7 +76,11 @@ router.post('/makeQuestion/written',adminControllers.writtenQuestionController.i
 router.put('/makeQuestion/written',adminControllers.writtenQuestionController.update);
 router.delete('/makeQuestion/written',adminControllers.writtenQuestionController.remove);
 
-router.get('/dataEntry/interactive_task',adminControllers.interactiveTaskController.index)
+// Route For interactive task
+router.get('/dataEntry/interactive_task',adminControllers.interactiveTaskController.index);
+router.post('/dataEntry/interactive_task',fileUpload.single('file'),adminControllers.interactiveTaskController.insert);
+router.put('/dataEntry/interactive_task',adminControllers.interactiveTaskController.update);
+router.delete('/dataEntry/interactive_task',adminControllers.interactiveTaskController.remove);
 
 router.get('/set_new_question',adminControllers.setQuestionController.index)
 

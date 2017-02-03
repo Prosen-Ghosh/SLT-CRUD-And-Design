@@ -7,30 +7,28 @@
                     <h4 class="modal-title">Edit Image</h4>
                 </div>
                 <div class="modal-body">
-                  <form action='' method="POST" name="form1-<%- image_id %>" id="form1-<%- image_id %>" enctype="multipart/form-data">
-                      <div class="container">
-                        <input type="hidden" name="_method" value="PUT"/>
-                        <div class="form-group">
-                            <label for="word">Image Name:</label>
-                            <input type="text" class="form-control" id="image_name" name='image_name' placeholder="Ex: Banna" value='<%- image_name %>'>
-                            <input type="hidden" id="image_id" name='image_id' value='<%- image_id %>'>
-                            <input type="hidden" id="image_path" name='image_path' value='<%- image_path %>'>
-                        </div><br/><br/>
-                        <div class="form-group">
-                          <label class="control-label">Select Image</label>
-                          <input id="file" class="form-control" type="file" class="file" data-show-preview="false" name="file" value="<%- image_path%>">
-                        </div><br/><br/>
-                        <div class="form-group">
-                            <label for="Description">Description:</label>
-                            <input type="text" class="form-control" id="description" name='description' placeholder="Ex: Description" value="<%- description %>">
-                        </div>
+                  <form method="POST" name="form1-<%- image_id %>" id="form1-<%- image_id %>" enctype="multipart/form-data">
+                      <input type="hidden" name="_method" value="PUT"/>
+                      <div class="form-group">
+                          <label for="word">Image Name:</label>
+                          <input type="text" class="form-control" id="image_name" name='image_name' placeholder="Ex: Banna" value='<%- image_name %>'>
+                          <input type="hidden" id="image_id" name='image_id' value='<%- image_id %>'>
+                          <input type="hidden" id="image_path" name='image_path' value='<%- image_path %>'>
+                      </div><br/><br/>
+                      <div class="form-group">
+                        <label class="control-label">Select Image</label>
+                        <input id="file" class="form-control file" type="file" data-show-preview="false" name="file">
+                      </div><br/><br/>
+                      <div class="form-group">
+                          <label for="Description">Description:</label>
+                          <input type="text" class="form-control" id="description" name='description' placeholder="Ex: Description" value="<%- description %>">
                       </div>
                   </form>
                 </div>
               <div class="modal-footer">
 
                 <button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
-                <button type="submit" form="form1-<%- image_id %>" class="btn btn-success ">Submit</button>
+                <button type="submit" form="form1-<%- image_id %>" class="btn btn-success ">Update</button>
               </div>
               </div>
             </div>

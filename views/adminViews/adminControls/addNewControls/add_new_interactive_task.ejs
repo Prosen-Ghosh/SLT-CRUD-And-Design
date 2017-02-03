@@ -1,7 +1,9 @@
 <div> <!--Model Div Start-->
   <!-- Add New Country -->
-  <button class="btn btn-info active" id='countryModelBtn'>Add New Interactive Task</button>
-
+  <div>
+    <button class="btn btn-info active" id='countryModelBtn'>Add New Interactive Task</button>
+  </div>
+  <br/>
   <div id='myModel'class="modal fade">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -10,18 +12,14 @@
             <h4 class="modal-title">Add New Interactive Task</h4>
         </div>
         <div class="modal-body">
-          <form action='' method="POST">
+          <form method="POST" id="form1" name="form1" encType="multipart/form-data">
             <div class="form-group">
                 <label for="word">Interactive Task Title:</label>
-                <input type="text" class="form-control" id="word" name='word' placeholder="Ex: Cow">
+                <input type="text" class="form-control" id="interactive_task_title" name='interactive_task_title' placeholder="Ex: Match-The-Color">
             </div>
             <div class="form-group">
                 <label for="Paragraph">Interactive Task Path:</label>
-                <select class="selectpicker form-control" data-live-search="true">
-                  <option data-tokens="ketchup mustard">Hot Dog, Fries and a Soda</option>
-                  <option data-tokens="mustard">Burger, Shake and a Smile</option>
-                  <option data-tokens="frosting">Sugar, Spice and all things nice</option>
-                </select>
+                <input id="file" class="form-control file" type="file" data-show-preview="false" name="file">
             </div>
             <div class="form-group">
                 <label for="Description">Description:</label>
@@ -29,14 +27,14 @@
             </div>
             <div class="form-group">
                 <label for="Description">Minimum Score:</label>
-                <input type="text" class="form-control" id="description" name='description' placeholder="Ex: Description">
+                <input type="text" class="form-control" id="min_score" name='min_score' placeholder="Ex: 33.33">
             </div>
-            <button type="submit" class="btn btn-success ">Submit</button>
-            <button type="button" class="btn btn-warning ">Reset</button>
+
           </form>
         </div>
       <div class="modal-footer">
-          ...
+        <button type="button" class="btn btn-warning ">Reset</button>
+        <button type="submit" form='form1' class="btn btn-success ">Submit</button>
       </div>
       </div>
     </div>

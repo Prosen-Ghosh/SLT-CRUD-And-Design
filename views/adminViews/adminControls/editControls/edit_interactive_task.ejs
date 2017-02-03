@@ -1,0 +1,35 @@
+<!--Edit Interactive Task-->
+          <div id='edit-<%- interactive_task_id %>' class="modal fade">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Edit Interactive Task</h4>
+                </div>
+                <div class="modal-body">
+                  <form method="POST" name="form1-<%- interactive_task_id %>" id="form1-<%- interactive_task_id %>" enctype="application/x-www-form-urlencoded">
+                      <input type="hidden" name="_method" value="PUT"/>
+                      <div class="form-group">
+                          <label for="word">Interactive Task Title:</label>
+                          <input type="text" class="form-control" id="interactive_task_title" name='interactive_task_title' placeholder="Ex: Banna" value='<%- interactive_task_title %>'>
+                          <input type="hidden" id="interactive_task_id" name='interactive_task_id' value='<%- interactive_task_id %>'>
+                          <input type="hidden" id="interactive_task_path" name='interactive_task_path' value='<%- interactive_task_path %>'>
+                      </div><br/><br/>
+                      <div class="form-group">
+                        <label class="control-label">Description</label>
+                        <input type="text" class="form-control" id="description" name='description' placeholder="Ex: Description" value='<%- description %>'>
+                      </div><br/><br/>
+                      <div class="form-group">
+                          <label for="Description">Minimum Score:</label>
+                          <input type="text" class="form-control" id="min_score" name='min_score' placeholder="Ex: 33.33" value="<%- min_score %>">
+                      </div>
+                  </form>
+                </div>
+              <div class="modal-footer">
+
+                <button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
+                <button type="submit" form="form1-<%- interactive_task_id %>" class="btn btn-success ">Update</button>
+              </div>
+              </div>
+            </div>
+          </div>

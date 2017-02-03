@@ -19,7 +19,7 @@ module.exports = {
       res.render(path.normalize(basePath + "/views/adminViews/admin_panel_view"),data);
     });
   },
-  
+
   api : function(req,res,next){
     imageData.getImage('',function(err,record){
       res.status(200);
@@ -43,17 +43,20 @@ module.exports = {
         } else {
           let imageInfo = {
             image_id : null,
+            type : "Image",
             image_name : req.body.image_name,
             image_path : req.body.image_name + num +'.jpg',
             description : req.body.description
           }
           imageData.createImage(imageInfo,function(err,record){
+            res.status(201);
             res.redirect('/admin/dataEntry/image');
           });
         }
       });
     });
   },
+
   update : function(req,res,next){
     imageData.getImageNames(req.body.image_name,function(err,record){
 
@@ -65,9 +68,10 @@ module.exports = {
       num++;
       var file = basePath + '/public/img/userImages/' + req.body.image_name + num +'.jpg';
       console.log(req + " Path--");
-      fs.rename(req.file.path, file);
+      fs.rename(req.file1.path, file);
       let imageInfo = {
         image_id : req.body.image_id,
+        type: "Image",
         image_name : req.body.image_name,
         image_path : req.body.image_name + num +'.jpg',
         description : req.body.description

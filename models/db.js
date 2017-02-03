@@ -1,6 +1,11 @@
 const mysql = require('mysql');
-const config = require('./config');
-var connection = mysql.createConnection(config);
+var connection = mysql.createConnection({
+  connectionLimit : 100,
+  host            : 'localhost',
+  user            : 'root',
+  password        : 'root',
+  database        : 'slt'
+});
 
 connection.connect(function(err) {
   console.info('connection create');

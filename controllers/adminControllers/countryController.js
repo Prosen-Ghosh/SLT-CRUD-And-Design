@@ -24,6 +24,15 @@ module.exports = {
     });
   },
   insert : function(req,res,next){
+    // This Codes Are For Validation.
+
+    /*
+    req.checkBody('country', 'Invalid country name').notEmpty().isInt();
+    var errors = req.validationErrors();
+    res.send(errors);
+    return;
+    */
+
     let countryInfo = {
       country_id : null,
       country_name : req.body.country
