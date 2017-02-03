@@ -44,7 +44,8 @@ router.delete('/dataEntry/image',adminControllers.imageController.remove);
 
 // Speech Route
 router.get('/dataEntry/speech',adminControllers.speechController.index);
-//router.get('/dataEntry/speech',adminControllers.speechController.api);
+router.get('/dataEntry/speech/api',adminControllers.speechController.api);
+router.get('/dataEntry/speech/apiForSpechQuestion',adminControllers.speechController.apiForSpechQuestion);
 router.post('/dataEntry/speech',adminControllers.speechController.insert);
 router.put('/dataEntry/speech',adminControllers.speechController.update);
 router.delete('/dataEntry/speech',adminControllers.speechController.remove);
@@ -56,7 +57,11 @@ router.post('/dataEntry/paragraph',adminControllers.paragraphController.insert);
 router.put('/dataEntry/paragraph',adminControllers.paragraphController.update);
 router.delete('/dataEntry/paragraph',adminControllers.paragraphController.remove);
 
+// Route For Speech Question
 router.get('/makeQuestion/speech',adminControllers.speechQuestionController.index);
+router.post('/makeQuestion/speech',adminControllers.speechQuestionController.insert);
+router.put('/makeQuestion/speech',adminControllers.speechQuestionController.update);
+router.delete('/makeQuestion/speech',adminControllers.speechQuestionController.remove);
 
 router.get('/makeQuestion/mcq',adminControllers.mcqQuestionController.index)
 
@@ -72,5 +77,8 @@ router.get('/dataEntry/interactive_task',adminControllers.interactiveTaskControl
 
 router.get('/set_new_question',adminControllers.setQuestionController.index)
 
-router.get('/suggestions',adminControllers.suggestionController.index)
+// Route Suggestions
+router.get('/suggestions',adminControllers.suggestionController.index);
+router.delete('/suggestions',adminControllers.suggestionController.remove);
+
 module.exports = router;

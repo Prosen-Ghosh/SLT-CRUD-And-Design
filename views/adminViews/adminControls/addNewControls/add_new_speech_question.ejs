@@ -1,8 +1,10 @@
 <div> <!--Model Div Start-->
   <!-- Add New Country -->
-  <button class="btn btn-info active" id='countryModelBtn'>Add New Speech Question</button>
-
-  <div id='myModel'class="modal fade">
+  <div>
+    <button class="btn btn-info active speechQuestionId" id='countryModelBtn'>Add New Speech Question</button>
+  </div>
+  <br/>
+  <div id='myModel'class="modal fade" >
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -10,30 +12,26 @@
             <h4 class="modal-title">Add New Speech Question</h4>
         </div>
         <div class="modal-body">
-          <form action='' method="POST">
+          <form action='' method="POST" id="form1" name="form1">
             <div class="form-group">
                 <label for="word">Question Title:</label>
-                <input type="text" class="form-control" id="questionTitle" name='questionTitle' placeholder="Ex: Question Title">
+                <input type="text" class="form-control" id="question_title" name='question_title' placeholder="Ex: Question Title">
             </div>
             <div class="form-group">
                 <label for="speechId">Speech Id:</label>
-                <select class="selectpicker form-control" data-live-search="true" name='speechId'>
-                  <option data-tokens="ketchup mustard">Hot Dog, Fries and a Soda</option>
-                  <option data-tokens="mustard">Burger, Shake and a Smile</option>
-                  <option data-tokens="frosting">Sugar, Spice and all things nice</option>
-                  
+                <select class="selectpicker form-control speech_id" data-live-search="true" id='speech_id' name='speech_id'>
                 </select>
             </div>
             <div class="form-group">
                 <label for="Synonyms">Minimum Score:</label>
-                <input type="text" class="form-control" id="minScore" name='minScore' placeholder="Ex: 33.33">
+                <input type="text" class="form-control" id="min_score" name='min_score' placeholder="Ex: 33.33">
             </div>
-            <button type="submit" class="btn btn-success ">Submit</button>
-            <button type="button" class="btn btn-warning ">Reset</button>
+
           </form>
         </div>
       <div class="modal-footer">
-          ...
+        <button type="button" class="btn btn-warning ">Reset</button>
+        <button type="submit" form='form1' class="btn btn-success ">Submit</button>
       </div>
       </div>
     </div>

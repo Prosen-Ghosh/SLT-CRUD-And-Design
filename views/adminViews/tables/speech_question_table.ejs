@@ -1,28 +1,38 @@
 <div><!--Table Start-->
   <div class="row col-md-9 custyle">
-    <table class="table table-striped custab">
+    <table class="table table-striped custab tableSearch">
       <thead>
           <tr>
-              <th class="col-md-2">Question Title</th>
-              <th class="col-md-2">Word Id</th>
+              <th class="col-md-4">Question Title</th>
+              <th class="col-md-3">Speech Id</th>
+              <th>Minimum Score</th>
               <th class="text-center">Action</th>
           </tr>
       </thead>
+        <% for(var  i = 0; i < databaseData.length; i++){ %>
               <tr>
-                  <td>1</td>
-                  <td>News</td>
-                  <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Delete</a></td>
+                  <td class="col-md-4"><%- databaseData[i].question_title %></td>
+                  <td class="col-md-3"><%- databaseData[i].speech_id %></td>
+                  <td class="col-md-2"><%- databaseData[i].min_score %></td>
+                  <td class="text-center">
+                    <!-- <a class='btn btn-info btn-xs' id='countryModelBtn' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a>-->
+                    <button class="btn btn-info btn-xs glyphicon glyphicon-edit speechQuestionId" id='editBtn<%- databaseData[i].speech_question_id %>' onclick="openEditModel(<%- databaseData[i].speech_question_id %>);">Edit</button>
+
+                    <%- include('./../adminControls/editControls/edit_speech_question',{
+                       speech_question_id : databaseData[i].speech_question_id,
+                       question_title : databaseData[i].question_title,
+                       speech_id : databaseData[i].speech_id,
+                       min_score : databaseData[i].min_score
+                     })%>
+
+                    <button class="btn btn-danger btn-xs glyphicon glyphicon-remove" id='deleteBtn<%- databaseData[i].speech_question_id %>' onclick="openDeleteModel(<%- databaseData[i].speech_question_id %>);">Delete</button>
+
+                    <%- include('./../adminControls/deleteControls/delete_speech_question',{
+                       speech_question_id : databaseData[i].speech_question_id
+                     })%>
+                  </td>
               </tr>
-              <tr>
-                  <td>2</td>
-                  <td>Products</td>
-                  <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Delete</a></td>
-              </tr>
-              <tr>
-                  <td>3</td>
-                  <td>Blogs</td>
-                  <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Delete</a></td>
-              </tr>
+        <% } %>
       </table>
     </div>
 </div><!--Table Start-->

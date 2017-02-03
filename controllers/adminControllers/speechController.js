@@ -22,6 +22,14 @@ module.exports = {
       res.send(record);
     });
   },
+  // This function is for all speech question details
+  apiForSpechQuestion : function(req,res,next){
+    speechData.getSpechDetailsForQuestions('',function(err,record){
+      res.status(200);
+      console.log(record);
+      res.send(record);
+    });
+  },
   insert : function(req,res,next){
     let speechInfo = {
       speech_id : null,

@@ -46,3 +46,27 @@ function changeType(val){
     $('.content_id').html(str);
   });
 }
+
+/* Function For Get Speech Database Data And show in Speech Question <Select> tag*/
+
+$(document).ready(function(){
+  $('.speechQuestionId').click(function(){
+    var url = "http://localhost:3000/admin/dataEntry/speech/apiForSpechQuestion";
+    $.get(url, function(data, status){
+      var str = '';
+      for(let i = 0; i < data.length; i++){
+        str += "<option data-tokens='"
+            + data[i].speech_id
+            + "' value='"+data[i].speech_id
+            +"'>"+ "Speech ID: "
+            + data[i].speech_id
+            + ";  Speech Type: " + data[i].speech_type
+            if(data[i].speech_type == 'Word')str += ";  Word Name: " + data[i].word
+            else if(data[i].speech_type == 'Image')str += ";  Image Name: " + data[i].image_name
+            else if(data[i].speech_type == 'Paragraph')str += ";  Image Title: " + data[i].paragraph_title
+            +"</option><br/>";
+      }
+      $('.speech_id').html(str);
+    });
+  });
+});
