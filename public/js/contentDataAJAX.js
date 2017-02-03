@@ -66,7 +66,7 @@ $(document).ready(function(){
             else if(data[i].speech_type == 'Paragraph')str += ";  Image Title: " + data[i].paragraph_title
             +"</option><br/>";
       }
-      $('.speech_id').html(str);
+      $('.contentOptions').html(str);
     });
   });
 });

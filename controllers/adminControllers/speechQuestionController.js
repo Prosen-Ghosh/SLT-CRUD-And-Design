@@ -30,7 +30,7 @@ module.exports = {
       speech_id : req.body.speech_id,
       min_score : req.body.min_score
     }
-    speechQuestionData.createSpeechQuestion(speechInfo,function(err,record){
+    speechQuestionData.createSpeechQuestion(speechQuestionInfo,function(err,record){
       res.redirect('/admin/makeQuestion/speech');
     });
   },

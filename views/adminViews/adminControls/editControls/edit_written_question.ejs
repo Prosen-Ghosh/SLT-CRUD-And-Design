@@ -1,0 +1,36 @@
+<div id='edit-<%- written_question_id %>'class="modal fade">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Edit Written Question</h4>
+      </div>
+      <div class="modal-body">
+        <form method="POST" name="form1-<%- written_question_id %>" id="form1-<%- written_question_id %>" enctype="application/x-www-form-urlencoded">
+          <input type="hidden" name="_method" value="PUT"/>
+          <div class="form-group">
+              <label for="Description">Question Title:</label>
+              <input type="text" class="form-control" id="question_title" name='question_title' placeholder="Ex: Write Down The Flowing Word:" value="<%- question_title %>">
+              <input type="hidden" id="written_question_id" name='written_question_id' value="<%- written_question_id %>">
+          </div>
+          <br/><br/>
+          <div class="form-group">
+              <label for="contentId">Content Id:</label>
+              <select class="selectpicker form-control contentOptions" data-live-search="true" name="content_id" id="content_id">
+              </select>
+          </div>
+          <br/><br/>
+          <div class="form-group">
+              <label for="hint">Answer:</label>
+              <input type="text" class="form-control" id="answer" name='answer' placeholder="Ex: Apple" value="<%- answer %>">
+          </div>
+          <br/><br/>
+        </form>
+      </div>
+    <div class="modal-footer">
+      <button type="button" data-dismiss="modal" class="btn btn-default ">Close</button>
+      <button type="submit" form='form1-<%- written_question_id %>' class="btn btn-success ">Submit</button>
+    </div>
+    </div>
+  </div>
+</div>

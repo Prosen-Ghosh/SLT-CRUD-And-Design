@@ -71,7 +71,11 @@ router.post('/makeQuestion/yes_no',adminControllers.yesNoQuestionController.inse
 router.put('/makeQuestion/yes_no',adminControllers.yesNoQuestionController.update);
 router.delete('/makeQuestion/yes_no',adminControllers.yesNoQuestionController.remove)
 
-router.get('/makeQuestion/written',adminControllers.writtenQuestionController.index)
+//Route For Written Questions
+router.get('/makeQuestion/written',adminControllers.writtenQuestionController.index);
+router.post('/makeQuestion/written',adminControllers.writtenQuestionController.insert);
+router.put('/makeQuestion/written',adminControllers.writtenQuestionController.update);
+router.delete('/makeQuestion/written',adminControllers.writtenQuestionController.remove);
 
 router.get('/dataEntry/interactive_task',adminControllers.interactiveTaskController.index)
 
