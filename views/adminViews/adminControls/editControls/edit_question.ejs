@@ -1,0 +1,67 @@
+<div id='edit-<%- serial_no %>'class="modal fade">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Edit Question</h4>
+      </div>
+      <div class="modal-body">
+        <form method="POST" name="form1-<%- serial_no %>" id="form1-<%- serial_no %>" enctype="application/x-www-form-urlencoded">
+          <input type="hidden" name="_method" value="PUT"/>
+
+          <div class="form-group">
+            <input type="hidden" id="serial_no" name='serial_no' value='<%- serial_no %>'>
+              <label for="Description">Type:</label>
+              <select class="selectpicker form-control" data-live-search="true" name='type' id="type" onchange="getQuestions(this)">
+                <option data-tokens="---" value="---">---</option>
+                <option data-tokens="Written Question" value="Written" <%- (type == 'Written')? 'selected' : ''%> >Written Question</option>
+                <option data-tokens="Interactive Task" value="Interactive_Task" <%- (type == 'Interactive_Task')? 'selected' : ''%>>Interactive Task</option>
+                <option data-tokens="Yes/No Question" value="Yes_No" <%- (type == 'Yes_No')? 'selected' : ''%>>Yes/No Questions</option>
+              </select>
+          </div>
+          <br/><br/>
+          <div class="form-group">
+              <label for="word">Question Id:</label>
+              <select class="selectpicker form-control question_id" data-live-search="true" name='question_id' id="question_id">
+              </select>
+          </div>
+          <br/><br/>
+          <div class="form-group">
+              <label for="Synonyms">Question Label:</label>
+              <select class="selectpicker form-control" data-live-search="true" name="question_label" id="question_label">
+                <option data-tokens="1" value="1"<%- (question_label == '1')? 'selected' : ''%> >1</option>
+                <option data-tokens="2" value="2" <%- (question_label == '2')? 'selected' : ''%> >2</option>
+                <option data-tokens="3" value="3" <%- (question_label == '3')? 'selected' : ''%>>3</option>
+                <option data-tokens="4" value="4" <%- (question_label == '4')? 'selected' : ''%> >4</option>
+                <option data-tokens="5" value="5" <%- (question_label == '5')? 'selected' : ''%> >5</option>
+                <option data-tokens="6" value="6" <%- (question_label == '6')? 'selected' : ''%> >6</option>
+                <option data-tokens="7" value="7" <%- (question_label == '7')? 'selected' : ''%> >7</option>
+                <option data-tokens="8" value="8" <%- (question_label == '8')? 'selected' : ''%> >8</option>
+                <option data-tokens="9" value="9" <%- (question_label == '9')? 'selected' : ''%> >9</option>
+                <option data-tokens="10" value="10" <%- (question_label == '10')? 'selected' : ''%> >10</option>
+                <option data-tokens="11" value="11" <%- (question_label == '11')? 'selected' : ''%> >11</option>
+                <option data-tokens="12" value="12" <%- (question_label == '12')? 'selected' : ''%> >12</option>
+                <option data-tokens="13" value="13" <%- (question_label == '13')? 'selected' : ''%> >13</option>
+              </select>
+          </div>
+          <br/><br/>
+          <div class="form-group">
+              <label for="Synonyms">Problem Catagory Id:</label>
+              <select class="selectpicker form-control" data-live-search="true" id="problem_category_id" name="problem_category_id">
+                <option data-tokens="1-Stammering" value="1" <%- (problem_category_id == '1')? 'selected' : ''%> >1 - Stammering</option>
+                <option data-tokens="2-Dysarthria" value="2" <%- (problem_category_id == '2')? 'selected' : ''%> >2 - Dysarthria</option>
+                <option data-tokens="3-Articulation" value="3" <%- (problem_category_id == '3')? 'selected' : ''%> >3 - Articulation</option>
+                <option data-tokens="4-Apraxia" value="4" <%- (problem_category_id == '4')? 'selected' : ''%> >4 - Apraxia</option>
+                <option data-tokens="5-Aphasia" value="5" <%- (problem_category_id == '5')? 'selected' : ''%> >5 - Aphasia</option>
+              </select>
+          </div>
+          <br/><br/>
+        </form>
+      </div>
+    <div class="modal-footer">
+      <button type="button" data-dismiss="modal" class="btn btn-default ">Close</button>
+      <button type="submit" form='form1-<%- serial_no %>' class="btn btn-success ">Submit</button>
+    </div>
+    </div>
+  </div>
+</div>

@@ -66,23 +66,30 @@ router.delete('/makeQuestion/speech',adminControllers.speechQuestionController.r
 
 // Yes/No Quesions route
 router.get('/makeQuestion/yes_no',adminControllers.yesNoQuestionController.index);
+router.get('/makeQuestion/yes_no/api',adminControllers.yesNoQuestionController.api);
 router.post('/makeQuestion/yes_no',adminControllers.yesNoQuestionController.insert);
 router.put('/makeQuestion/yes_no',adminControllers.yesNoQuestionController.update);
 router.delete('/makeQuestion/yes_no',adminControllers.yesNoQuestionController.remove)
 
 //Route For Written Questions
 router.get('/makeQuestion/written',adminControllers.writtenQuestionController.index);
+router.get('/makeQuestion/written/api',adminControllers.writtenQuestionController.api);
 router.post('/makeQuestion/written',adminControllers.writtenQuestionController.insert);
 router.put('/makeQuestion/written',adminControllers.writtenQuestionController.update);
 router.delete('/makeQuestion/written',adminControllers.writtenQuestionController.remove);
 
 // Route For interactive task
 router.get('/dataEntry/interactive_task',adminControllers.interactiveTaskController.index);
+router.get('/dataEntry/interactive_task/api',adminControllers.interactiveTaskController.api);
 router.post('/dataEntry/interactive_task',fileUpload.single('file'),adminControllers.interactiveTaskController.insert);
 router.put('/dataEntry/interactive_task',adminControllers.interactiveTaskController.update);
 router.delete('/dataEntry/interactive_task',adminControllers.interactiveTaskController.remove);
 
-router.get('/set_new_question',adminControllers.setQuestionController.index)
+// Route For Set New Questions
+router.get('/set_new_question',adminControllers.setQuestionController.index);
+router.post('/set_new_question',adminControllers.setQuestionController.insert);
+router.put('/set_new_question',adminControllers.setQuestionController.update)
+router.delete('/set_new_question',adminControllers.setQuestionController.remove);
 
 // Route Suggestions
 router.get('/suggestions',adminControllers.suggestionController.index);

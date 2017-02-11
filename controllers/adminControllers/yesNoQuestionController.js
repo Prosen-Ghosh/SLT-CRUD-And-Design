@@ -17,7 +17,7 @@ module.exports = {
     });
   },
   api : function(req,res,next){
-    yesNoQuestionsData.getParagraph('',function(err,record){
+    yesNoQuestionsData.getYesNoQuestions('',function(err,record){
       res.status(200);
       res.send(record);
     });

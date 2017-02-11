@@ -18,7 +18,12 @@ module.exports = {
       res.render(path.normalize(basePath + "/views/adminViews/admin_panel_view"),data);
     });
   },
-
+  api : function(req,res,next){
+    interactiveTaskData.getInteractiveTask('',function(err,record){
+      res.status(200);
+      res.send(record);
+    });
+  },
   insert : function(req,res,next){
     var file = basePath + '/public/interactive_task/' + req.body.interactive_task_title +'.js';
     console.log('ai to');

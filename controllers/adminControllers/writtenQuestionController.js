@@ -18,8 +18,9 @@ module.exports = {
     });
   },
   api : function(req,res,next){
-    writtenQuestionData.getWord('',function(err,record){
+    writtenQuestionData.getWrittenQuestion('',function(err,record){
       res.status(200);
+      console.log(record);
       res.send(record);
     });
   },

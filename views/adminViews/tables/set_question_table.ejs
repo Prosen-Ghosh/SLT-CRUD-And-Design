@@ -1,28 +1,40 @@
 <div><!--Table Start-->
   <div class="row col-md-9 custyle">
-    <table class="table table-striped custab">
+    <table class="table table-striped custab tableSearch">
       <thead>
           <tr>
-              <th>ID</th>
-              <th>Name</th>
+              <th class="col-md-1">Question Id</th>
+              <th>Type Id</th>
+              <th>Question Label</th>
+              <th>Problem Category Id</th>
               <th class="text-center">Action</th>
           </tr>
       </thead>
+        <% for(var i = 0; i < databaseData.length; i++){ %>
               <tr>
-                  <td>1</td>
-                  <td>News</td>
-                  <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Delete</a></td>
+                  <td class="col-md-1"><%- databaseData[i].question_id%></td>
+                  <td><%- databaseData[i].type%></td>
+                  <td><%- databaseData[i].question_label%></td>
+                  <td><%- databaseData[i].problem_category_id%></td>
+                  <td>
+                    <button class="btn btn-info btn-xs glyphicon glyphicon-edit" id='editBtn<%- databaseData[i].serial_no %>' onclick="openEditModel(<%- databaseData[i].serial_no %>);">Edit</button>
+
+                      <%- include('./../adminControls/editControls/edit_question',{
+                         serial_no : databaseData[i].serial_no,
+                         question_id : databaseData[i].question_id,
+                         type : databaseData[i].type,
+                         question_label : databaseData[i].question_label,
+                         problem_category_id : databaseData[i].problem_category_id
+                       })%>
+
+                  <button class="btn btn-danger btn-xs glyphicon glyphicon-remove" id='deleteBtn<%- databaseData[i].serial_no %>' onclick="openDeleteModel(<%- databaseData[i].serial_no %>);">Delete</button>
+
+                      <%- include('./../adminControls/deleteControls/delete_question',{
+                        serial_no : databaseData[i].serial_no
+                       })%>
+                   </td>
               </tr>
-              <tr>
-                  <td>2</td>
-                  <td>Products</td>
-                  <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Delete</a></td>
-              </tr>
-              <tr>
-                  <td>3</td>
-                  <td>Blogs</td>
-                  <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Delete</a></td>
-              </tr>
+          <% } %>
       </table>
     </div>
 </div><!--Table Start-->

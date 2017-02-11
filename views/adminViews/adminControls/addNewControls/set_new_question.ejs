@@ -1,7 +1,10 @@
 <div> <!--Model Div Start-->
   <!-- Add New Country -->
-  <button class="btn btn-info active" id='countryModelBtn'>Add New Set Question</button>
-
+  <script src="/assets/js/questionDataAJAX.js"></script>
+  <div>
+    <button class="btn btn-info active" id='countryModelBtn'>Add New Set Question</button>
+  </div>
+  <br/>
   <div id='myModel'class="modal fade">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -10,45 +13,58 @@
             <h4 class="modal-title">Add New Set Question</h4>
         </div>
         <div class="modal-body">
-          <form action='' method="POST">
+          <form method="POST" id="form1" name="form1">
+
+            <div class="form-group">
+                <label for="Description">Type:</label>
+                <select class="selectpicker form-control" data-live-search="true" name='type' id="type" onchange="getQuestions(this)">
+                  <option data-tokens="---" value="---">---</option>
+                  <option data-tokens="Written Question" value="Written">Written Question</option>
+                  <option data-tokens="Interactive Task" value="Interactive_Task">Interactive Task</option>
+                  <option data-tokens="Yes/No Question" value="Yes_No">Yes/No Questions</option>
+                </select>
+            </div>
+
             <div class="form-group">
                 <label for="word">Question Id:</label>
-                <select class="selectpicker form-control" data-live-search="true">
-                  <option data-tokens="ketchup mustard">Hot Dog, Fries and a Soda</option>
-                  <option data-tokens="mustard">Burger, Shake and a Smile</option>
-                  <option data-tokens="frosting">Sugar, Spice and all things nice</option>
+                <select class="selectpicker form-control question_id" data-live-search="true" name='question_id' id="question_id">
                 </select>
             </div>
-            <div class="form-group">
-                <label for="Description">Type Id:</label>
-                <select class="selectpicker form-control" data-live-search="true">
-                  <option data-tokens="ketchup mustard">Hot Dog, Fries and a Soda</option>
-                  <option data-tokens="mustard">Burger, Shake and a Smile</option>
-                  <option data-tokens="frosting">Sugar, Spice and all things nice</option>
-                </select>
-            </div>
+
             <div class="form-group">
                 <label for="Synonyms">Question Label:</label>
-                <select class="selectpicker form-control" data-live-search="true">
-                  <option data-tokens="ketchup mustard">Hot Dog, Fries and a Soda</option>
-                  <option data-tokens="mustard">Burger, Shake and a Smile</option>
-                  <option data-tokens="frosting">Sugar, Spice and all things nice</option>
+                <select class="selectpicker form-control" data-live-search="true" name="question_label" id="question_label">
+                  <option data-tokens="1" value="1">1</option>
+                  <option data-tokens="2" value="2">2</option>
+                  <option data-tokens="3" value="3">3</option>
+                  <option data-tokens="4" value="4">4</option>
+                  <option data-tokens="5" value="5">5</option>
+                  <option data-tokens="6" value="6">6</option>
+                  <option data-tokens="7" value="7">7</option>
+                  <option data-tokens="8" value="8">8</option>
+                  <option data-tokens="9" value="9">9</option>
+                  <option data-tokens="10" value="10">10</option>
+                  <option data-tokens="11" value="11">11</option>
+                  <option data-tokens="12" value="12">12</option>
+                  <option data-tokens="13" value="13">13</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="Synonyms">Problem Catagory Id:</label>
-                <select class="selectpicker form-control" data-live-search="true">
-                  <option data-tokens="ketchup mustard">Hot Dog, Fries and a Soda</option>
-                  <option data-tokens="mustard">Burger, Shake and a Smile</option>
-                  <option data-tokens="frosting">Sugar, Spice and all things nice</option>
+                <select class="selectpicker form-control" data-live-search="true" id="problem_category_id" name="problem_category_id">
+                  <option data-tokens="1-Stammering" value="1">1 - Stammering</option>
+                  <option data-tokens="2-Dysarthria" value="2">2 - Dysarthria</option>
+                  <option data-tokens="3-Articulation" value="3">3 - Articulation</option>
+                  <option data-tokens="4-Apraxia" value="4">4 - Apraxia</option>
+                  <option data-tokens="5-Aphasia" value="5">5 - Aphasia</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-success ">Submit</button>
-            <button type="button" class="btn btn-warning ">Reset</button>
+
           </form>
         </div>
       <div class="modal-footer">
-          ...
+        <button type="button" class="btn btn-warning ">Reset</button>
+        <button type="submit" form="form1" class="btn btn-success ">Submit</button>
       </div>
       </div>
     </div>

@@ -1,0 +1,27 @@
+<!--Delete Questions Model-->
+
+          <div id='delete-<%- serial_no %>' class="modal fade bs-example-modal-sm"> <!--Model Start-->
+            <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title text-warning" id="deleteTitle-<%- serial_no %>">Delete Question</h4>
+                </div>
+                <div class="modal-body">
+                  <form method="POST" name="dform1-<%- serial_no %>" id="dform1-<%- serial_no %>" enctype="application/x-www-form-urlencoded">
+                    <input type="hidden" name="_method" value="DELETE"/>
+                    <div class="form-group">
+                      <input type="hidden" id="serial_no" name='serial_no' value='<%- serial_no %>' />
+                    </div>
+                    <div class="form-group">
+                        <div class="alert alert-danger" role="alert">Are You Sure? <br/><span>It Will Delete Forever</span></div>
+                    </div>
+                  </form>
+                </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" form="dform1-<%- serial_no %>" class="btn btn-danger ">Delete</button>
+              </div>
+              </div>
+            </div>
+          </div><!--Model End-->
