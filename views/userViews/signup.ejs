@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+      <style>
+      body{
+          background-color: #525252;
+      }
+      .centered-form{
+      	margin-top: 60px;
+      }
+      .centered-form .panel{
+      	background: rgba(255, 255, 255, 0.8);
+      	box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+      }
+      </style>
+      <script src="/assets/js/jquery-3.1.1.js"></script>
+      <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+      <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap-theme.min.css">
+      <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+
+      <script>
+      function addHide(){
+        var value = document.getElementById('whoAmI').value;
+
+        if(value == "Therapist"){
+          $('#input_problem_category_id').addClass("hide");
+        }
+        else if(value == "Patient"){
+          $('#input_problem_category_id').removeClass("hide");
+        }
+        else {
+          alert("Please Chose An Option.")
+        }
+      }
+      </script>
+  </head>
+  <body>
+    <div>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+              <img alt="SLT" src="/assets/img/icon/slt_icon2.png">
+            </a><h4 class="navbar-text page-header">Speech Language Therapy</h4>
+          </div>
+          <div class='panel'>
+            <a href="/" class="btn btn-default pull-right">Home</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="container-fluid">
+      <div class="container">
+        <div class="col-lg-12 col-xs-12 col-sm-12 col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Please sign up for SLT <small>It's free!</small></h3>
+            </div>
+            <div class="panel-body">
+              <form role="form" action='/signup' method="POST">
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                      <input type="text" name="first_name" id="first_name" class="form-control input-md input-lg" placeholder="First Name">
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                      <input type="text" name="last_name" id="last_name" class="form-control input-md input-lg" placeholder="Last Name">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                      <input type="text" name="username" id="username" class="form-control input-md input-lg" placeholder="Username">
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                      <input type="email" name="email" id="email" class="form-control input-md input-lg" placeholder="Email Address">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                      <select  name="country" id="country" class="form-control input-md input-lg">
+                          <option>Select Country</option>
+                          <option>Afghanistan</option>
+                          <option>Bangladesh</option>
+                          <option>Cambodia</option>
+                          <option>Denmark</option>
+                          <option>Ecuador</option>
+                          <option>Fiji</option>
+                          <option>Gabon</option>
+                          <option>Haiti</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                      <select name='city' id="city" class="form-control input-md input-lg">
+                          <option>Select City</option>
+                          <option>Dhaka</option>
+                          <option>Jessore</option>
+                          <option>Khulna</option>
+                          <option>Denmark</option>
+                          <option>Ecuador</option>
+                          <option>Fiji</option>
+                          <option>Gabon</option>
+                          <option>Haiti</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                      <input type="password" name="password" id="password" class="form-control input-sm input-md input-lg" placeholder="Password">
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                      <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm input-md input-lg" placeholder="Confirm Password">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                      <select name='whoAmI' id="whoAmI" class="form-control input-md input-lg" onchange="addHide()">
+                          <option>Who Are You?</option>
+                          <option value="Therapist">Therapist</option>
+                          <option value="Patient">Patient</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6 hide" id="input_problem_category_id">
+                    <div class="form-group">
+                      <select name='problem_category_id' id="problem_category_id" class="form-control input-md input-lg">
+                          <option>Select Problem Category</option>
+                          <option value="1">Stuttering</option>
+                          <option value="2">Dysarthria</option>
+                          <option value="3">Articulation</option>
+                          <option value="4">Apraxia</option>
+                          <option value="5">Aphasia</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-1 col-sm-1 col-md-1">
+                    <label>Date Of Birth: </label>
+                  </div>
+                  <div class="col-xs-2 col-sm-2 col-md-2">
+                    <div class="form-group">
+                      <select name='year' id="year" class="form-control input-md input-lg">
+                          <option>Select Year</option>
+                          <%for(let i = 1980; i < currentYear; i++){%>
+                            <option value="<%-i%>"><%-i%></option>
+                          <%}%>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-xs-4 col-sm-4 col-md-4">
+                    <div class="form-group">
+                      <select name='month' id="month" class="form-control input-md input-lg">
+                          <option>Select Month</option>
+                          <%for(let i = 0; i < 12; i++){%>
+                            <option value="<%-i+1%>"><%- month[i]%></option>
+                          <%}%>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-xs-2 col-sm-2 col-md-2">
+                    <div class="form-group">
+                      <select name='day' id="day" class="form-control input-md input-lg">
+                          <option>Select Day</option>
+                          <%for(let i = 1; i <= 31; i++){%>
+                            <option value="<%-i%>"><%-i%></option>
+                          <%}%>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-md-offset-3 col-lg-offset-3">
+                    <input type="submit" value="Sign Up" class="btn btn-info btn-block">
+                  </div>
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

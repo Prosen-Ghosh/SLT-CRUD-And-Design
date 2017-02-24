@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
-const admin = require('./routes/admin')
+const admin = require('./routes/admin');
+const user = require('./routes/users');
 const path = require("path");
 const bodyParser = require('body-parser');
 var methodOverride = require('method-override');
@@ -31,10 +32,11 @@ app.set('/views',path.normalize(__dirname + ' /views'));
 app.use('/images',express.static(__dirname + '/public/img/userImages'));
 app.use('/interactive_task',express.static(__dirname + '/public/interactive_task'));
 app.use('/admin', admin);
-app.get('/',function(req,res){
+app.use('/', user);
+/*app.get('/',function(req,res){
   res.render(path.normalize(__dirname + '/views/index'),{title: "Index"});
 });
-
+*/
 
 app.listen(3000,function(){
     console.log('App listening on locolhost:3000')

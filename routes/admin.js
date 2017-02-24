@@ -10,7 +10,7 @@ const adminControllers = require('.././controllers/adminControllers'); // Loding
 // define the home page route for admin
 router.get('/', function (req, res) {
   res.render(path.normalize(basePath + "/views/adminViews/admin_panel_view"),{title:"Admin Home",includeFile:'pages/chart_view',pageName:''});
-})
+});
 // define the profile route for admin
 router.get('/profile', function (req, res) {
   res.send(path.normalize(basePath + ' Admin Profile'));
